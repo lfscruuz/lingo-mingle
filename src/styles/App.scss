@@ -1,0 +1,53 @@
+$primary-color: #feb159;
+$background-color: #403b59;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    background-color: $background-color;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    background-color: $primary-color;
+    width: 15vw;
+    height: 10vh;
+    border: none;
+    border-radius: 10px;
+    margin: 0 5vw;
+}
+
+.buttons-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: red solid 1px;
+}
+
+.cards-container{
+    outline: red solid 1px;
+    height: 80vh;
+    width: 80vw;
+    display: flex;
+}
+
+.card{
+    width: 10vw;
+    height: 25vh;
+    border-radius: 10%;
+    margin: 2vh;
+    
+    background-color: $primary-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
