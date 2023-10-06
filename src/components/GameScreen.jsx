@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import cardArray from '../constants/cardArray';
 import Card from './Card';
 
@@ -8,14 +8,33 @@ export default function GameScreen() {
     const [choiceOne, setChoiceOne] = useState(null)
     const [choiceTwo, setChoiceTwo] = useState(null)
 
-    console.log(cardArray);
-
     function shuffleCards() {
-        const shuffledCards = cardArray.sort(() => Math.random() - 0.5).map((card)=>({...card}));
+        const shuffledCards = cardArray.sort(() => Math.random() - 0.5).map((card) => ({ ...card }));
         setCards(shuffledCards);
         setTurns(0);
+        resetTurn();
+    }
 
-        console.log(cards);
+    function handleChoice(card) {
+        choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
+    }
+
+    useEffect(() =>{
+        console.log(choiceOne, choiceTwo);
+
+        if (choiceOne && choiceTwo) {
+            if (choiceOne.name === choiceTwo.name) {
+                console.log("THEY MATCH!!");
+            } else {
+                console.log("THEY DON'T MATCH...");
+            }
+            resetTurn();
+        }
+    },[choiceOne, choiceTwo])
+    
+    function resetTurn(){
+        setChoiceOne(null);
+        setChoiceTwo(null);
     }
 
     return (
@@ -23,9 +42,12 @@ export default function GameScreen() {
             <div className='cards-grid'>
                 {cards.length == 0 ? <>inicie um novo jogo</> :
                     cards.map((card) => {
-                        console.log(card)
                         return (
-                            <Card key={card.id} card={card}/>
+                            <Card
+                                key={card.id}
+                                card={card}
+                                handleChoice={handleChoice}
+                            />
                         )
                     })
                 }
