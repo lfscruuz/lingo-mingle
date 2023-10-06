@@ -20,13 +20,14 @@ export default function GameScreen() {
     }
 
     useEffect(() =>{
-        console.log(choiceOne, choiceTwo);
-
         if (choiceOne && choiceTwo) {
-            if (choiceOne.name === choiceTwo.name) {
-                console.log("THEY MATCH!!");
-            } else {
-                console.log("THEY DON'T MATCH...");
+            if (choiceOne.id !== choiceTwo.id){
+                console.log(choiceOne, choiceTwo);
+                if (choiceOne.name === choiceTwo.name) {
+                    console.log("THEY MATCH!!");
+                } else {
+                    console.log("THEY DON'T MATCH...");
+                }
             }
             resetTurn();
         }
