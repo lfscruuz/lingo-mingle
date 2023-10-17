@@ -82,8 +82,7 @@ const cards = [
     },
 ];
 
-const cardArray = cards.map((card, i) => ({...card, id: i}))
-console.log(cardArray);
+const cardArray1 = cards.map((card, i) => ({...card, id: i}))
 
-export default cardArray;
+export default cardArray1;
 

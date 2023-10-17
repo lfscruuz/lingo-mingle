@@ -1,18 +1,28 @@
 import { useEffect, useState } from 'react';
-import cardArray from '../constants/cardArray';
+import cardArray2 from '../constants/cardArray2';
+
 import Card from './Card';
 
-export default function GameScreen() {
+export default function PhaseTwo() {
     const [cards, setCards] = useState([]);
-    const [turns, setTurns] = useState(0);
     const [choiceOne, setChoiceOne] = useState(null);
     const [choiceTwo, setChoiceTwo] = useState(null);
     const [disabled, setDisabled] = useState(false);
 
+
     function shuffleCards() {
-        const shuffledCards = cardArray.sort(() => Math.random() - 0.5).map((card) => ({ ...card }));
+        const shuffledCards = () => {
+            var copy = [], n = cardArray2.length, i;
+            while (n) {
+              i = Math.floor(Math.random() * n--);
+          
+              copy.push(cardArray2.splice(i, 1)[0]);
+            }
+          
+            return copy;
+          }
+
         setCards(shuffledCards);
-        setTurns(0);
         resetTurn();
     }
 
@@ -20,16 +30,16 @@ export default function GameScreen() {
         choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
     }
 
-    useEffect(() =>{
+    useEffect(() => {
         if (choiceOne && choiceTwo) {
             setDisabled(true);
-            if (choiceOne.id !== choiceTwo.id){
+            if (choiceOne.id !== choiceTwo.id) {
                 console.log(choiceOne, choiceTwo);
                 if (choiceOne.name === choiceTwo.name) {
-                    setCards((prevCards) =>{
-                        return prevCards.map((card) =>{
-                            if(card.name === choiceOne.name){
-                                return{...card, matched: true}
+                    setCards((prevCards) => {
+                        return prevCards.map((card) => {
+                            if (card.name === choiceOne.name) {
+                                return { ...card, matched: true }
                             } else {
                                 return card
                             }
@@ -44,11 +54,10 @@ export default function GameScreen() {
                 resetTurn();
             }, 1000);
         }
-    },[choiceOne, choiceTwo]);
+    }, [choiceOne, choiceTwo]);
 
-    console.log(cards);
-    
-    function resetTurn(){
+
+    function resetTurn() {
         setChoiceOne(null);
         setChoiceTwo(null);
         setDisabled(false);
