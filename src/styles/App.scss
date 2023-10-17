@@ -1,11 +1,14 @@
 $primary-color: #feb159;
 $background-color: #403b59;
+$accent-color: #fef0b9;
+$card-width: 10vw;
+$card-height: 10vw;
 
 *{
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
     background-color: $background-color;
 }
 
@@ -15,16 +18,23 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 0 40vw;
 }
 
 button{
     background-color: $primary-color;
     width: 15vw;
     height: 10vh;
-    border: none;
-    border-radius: 10px;
+    border: solid 3px $accent-color;
+    border-radius: 20px;
     margin: 0 5vw;
     cursor: pointer;
+
+    color: $accent-color;
+    font-size: 24px;
+    font-weight: 700;
+    // -webkit-text-stroke-width: 2px;
+    // -webkit-text-stroke-color: black;
 }
 
 .buttons-container{
@@ -37,15 +47,58 @@ button{
 .cards-grid{
     height: 75vh;
     width: 80vw;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    gap: 1vw;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    
+    // display: grid;
+    // grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    // gap: 1vw;
 }
 
 .card{
-        
+    width: $card-width;
+    height: $card-height;
+    margin: 1vw;
+
     background-color: $primary-color;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+
+.card p{
+    font-size: 24px;
+}
+
+.card .back{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: $card-width;
+    height: $card-height;
+
+    cursor: pointer;
+    transition: all ease-in 0.2s;
+    transition-delay: 0.2s;
+}
+
+.flipped .back{
+    transform: rotateY(90deg);
+    transition-delay: 0s;
+}
+
+.card .front{
+    position: absolute;
+    transform: rotateY(90deg);
+    transition: all ease-in 0.2s;
+    width: $card-width;
+    height: $card-height;
+}
+
+.flipped .front{
+    transform: rotateY(0deg);
+    transition-delay: 0.2s;
 }

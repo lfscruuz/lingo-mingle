@@ -1,76 +1,85 @@
+
 const cards = [
     {
         name: "dog",
-        content: "dog image"
+        content: "/images/dog.png",
+        matched: false,
     },
     {
         name: "dog",
-        content: "dog"
+        content: "/images/palavra Dog.png",
+        matched: false,
     },
     {
         name: "cat",
-        content: "cat image"
+        content: "/images/cat.png",
+        matched: false,
     },
     {
         name: "cat",
-        content: "cat"
+        content: "/images/palavra Cat.png",
+        matched: false,
     },
     {
         name: "bird",
-        content: "bird image"
+        content: "/images/bird.png",
+        matched: false,
     },
     {
         name: "bird",
-        content: "bird"
+        content: "/images/palavra Bird.png",
+        matched: false,
     },
     {
-        name: "snake",
-        content: "snake image"
+        name: "chicken",
+        content: "/images/chicken.png",
+        matched: false,
     },
     {
-        name: "snake",
-        content: "snake"
+        name: "chicken",
+        content: "/images/palavra Chicken.png",
+        matched: false,
     },
     {
-        name: "wolf",
-        content: "wolf image"
+        name: "horse",
+        content: "/images/horse.png",
+        matched: false,
     },
     {
-        name: "wolf",
-        content: "wolf"
+        name: "horse",
+        content: "/images/palavra Horse.png",
+        matched: false,
     },
     {
-        name: "lion",
-        content: "lion image"
+        name: "pig",
+        content: "/images/pig.png",
+        matched: false,
     },
     {
-        name: "lion",
-        content: "lion"
+        name: "pig",
+        content: "/images/palavra Pig.png",
+        matched: false,
     },
     {
-        name: "banana",
-        content: "banana image"
+        name: "rabbit",
+        content: "/images/rabbit.png",
+        matched: false,
     },
     {
-        name: "banana",
-        content: "banana"
+        name: "rabbit",
+        content: "/images/palavra Rabbit.png",
+        matched: false,
     },
     {
-        name: "apple",
-        content: "apple image"
+        name: "turtle",
+        content: "/images/turtle.png",
+        matched: false,
     },
     {
-        name: "apple",
-        content: "apple"
+        name: "turtle",
+        content: "/images/palavra Turtle.png",
+        matched: false,
     },
-    {
-        name: "pear",
-        content: "pear image"
-    },
-    {
-        name: "pear",
-        content: "pear"
-    }
 ];
 
 const cardArray = cards.map((card, i) => ({...card, id: i}))
