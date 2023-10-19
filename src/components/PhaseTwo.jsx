@@ -1,10 +1,18 @@
-import { useEffect, useState } from 'react';
-
 import Card from './Card';
-import shuffle from '../constants/shuffleFunctions';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-export default function PhaseTwo({cards, setCards, shuffleCardsFunctionTwo, choiceOne, setChoiceOne, choiceTwo, setChoiceTwo, disabled, setDisabled, resetTurn }) {
+export default function PhaseTwo({ cards, setCards, shuffleCardsFunctionTwo, choiceOne, setChoiceOne, choiceTwo, setChoiceTwo, disabled, setDisabled, resetTurn, setTurns, turns, setPopup, popup }) {
 
+    const navigate = useNavigate();
+
+    function navigateToPhase3(){
+        navigate("/phase-three");
+    }
+
+    function closePopup(){
+        setPopup(false);
+    }
 
     function handleChoice(card) {
         choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
@@ -26,12 +34,20 @@ export default function PhaseTwo({cards, setCards, shuffleCardsFunctionTwo, choi
                     })
                 }
             }
+            setTurns(prevTurns => prevTurns + 1);
             setTimeout(() => {
                 resetTurn();
             }, 1000);
         }
+        if (cards.length !== 0) {
+            const allMatches = cards.every(card => card.matched);
+            if (allMatches) {
+                setPopup(true);
+            }
+        }
 
     }, [choiceOne, choiceTwo]);
+
 
 
     return (
@@ -56,9 +72,17 @@ export default function PhaseTwo({cards, setCards, shuffleCardsFunctionTwo, choi
                         )
                     })
                 }
+            </div>
+            <div className="buttons-container">
                 <button onClick={shuffleCardsFunctionTwo}>NOVO JOGO</button>
             </div>
-
+            <h1>JOGADAS: {turns}</h1>
+            {popup ? <div className='popup'>
+                <p onClick={closePopup}>X</p>
+                <h1>PARABÉNS! VOCÊ GANHOU!!</h1>
+                <h2>VOCÊ TERMINOU O JOGO EM {turns} JOGADAS </h2>
+                <button onClick={navigateToPhase3}>HOME</button>
+            </div> : <></>}
         </div>
     )
 }

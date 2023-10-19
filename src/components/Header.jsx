@@ -1,6 +1,4 @@
-import { useState } from 'react';
-import shuffle from '../constants/shuffleFunctions';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function Header({ shuffleCardsFunctionOne, shuffleCardsFunctionTwo, shuffleCardsFunctionThree }) {
 

@@ -71,13 +71,13 @@ const cards = [
         matched: false,
     },
     {
-        name: "tennis",
-        content: "/images/tennis.png",
+        name: "shoes",
+        content: "/images/shoes.png",
         matched: false,
     },
     {
-        name: "tennis",
-        content: "/images/tennis palavra.png",
+        name: "shoes",
+        content: "/images/shoes palavra.png",
         matched: false,
     },
 ];

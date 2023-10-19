@@ -13,6 +13,8 @@ function App() {
   const [choiceOne, setChoiceOne] = useState(null);
   const [choiceTwo, setChoiceTwo] = useState(null);
   const [disabled, setDisabled] = useState(false);
+  const [popup, setPopup] = useState(false);
+  const [turns, setTurns] = useState(0);
 
   function resetTurn() {
     setChoiceOne(null);
@@ -23,18 +25,24 @@ function App() {
   function shuffleCardsFunctionOne() {
     const shuffledCards = shuffle.phaseOne;
     setCards(shuffledCards);
+    setPopup(false);
+    setTurns(0);
     resetTurn();
   }
 
   function shuffleCardsFunctionTwo() {
     const shuffledCards = shuffle.phaseTwo;
     setCards(shuffledCards);
+    setPopup(false);
+    setTurns(0);
     resetTurn();
   }
 
   function shuffleCardsFunctionThree() {
     const shuffledCards = shuffle.phaseThree;
     setCards(shuffledCards);
+    setPopup(false);
+    setTurns(0);
     resetTurn();
   }
 
@@ -47,23 +55,7 @@ function App() {
           shuffleCardsFunctionThree={shuffleCardsFunctionThree}
         />
         <Routes>
-          <Route
-            path='/'
-            element={
-              <Main
-                cards={cards}
-                setCards={setCards}
-                shuffleCardsFunctionOne={shuffleCardsFunctionOne}
-                choiceOne={choiceOne}
-                setChoiceOne={setChoiceOne}
-                choiceTwo={choiceTwo}
-                setChoiceTwo={setChoiceTwo}
-                disabled={disabled}
-                setDisabled={setDisabled}
-                resetTurn={resetTurn}
-              />
-            }
-          />
+          <Route path='/' element={<Main />} />
           <Route
             path='phase-one'
             element={
@@ -78,6 +70,10 @@ function App() {
                 disabled={disabled}
                 setDisabled={setDisabled}
                 resetTurn={resetTurn}
+                setTurns={setTurns}
+                turns={turns}
+                setPopup={setPopup}
+                popup={popup}
               />
             }
           />
@@ -95,6 +91,10 @@ function App() {
                 disabled={disabled}
                 setDisabled={setDisabled}
                 resetTurn={resetTurn}
+                setTurns={setTurns}
+                turns={turns}
+                setPopup={setPopup}
+                popup={popup}
               />
             }
           />
@@ -112,6 +112,10 @@ function App() {
                 disabled={disabled}
                 setDisabled={setDisabled}
                 resetTurn={resetTurn}
+                setTurns={setTurns}
+                turns={turns}
+                setPopup={setPopup}
+                popup={popup}
               />
             }
           />
