@@ -1,14 +1,8 @@
 import Card from './Card';
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 
 export default function PhaseThree({ cards, setCards, shuffleCardsFunctionThree, choiceOne, setChoiceOne, choiceTwo, setChoiceTwo, disabled, setDisabled, resetTurn, setTurns, turns, setPopup, popup }) {
-    const navigate = useNavigate();
-
-    function navigateToHome() {
-        navigate("/");
-    }
 
     function closePopup() {
         setPopup(false);
@@ -79,7 +73,6 @@ export default function PhaseThree({ cards, setCards, shuffleCardsFunctionThree,
                 <p onClick={closePopup}>X</p>
                 <h1>PARABÉNS! VOCÊ GANHOU!!</h1>
                 <h2>VOCÊ TERMINOU O JOGO EM {turns} JOGADAS </h2>
-                <button onClick={navigateToHome}>HOME</button>
             </div> : <></>}
         </div>
     )
