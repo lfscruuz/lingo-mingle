@@ -41,7 +41,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className='App'>
-        <Header 
+        <Header
           shuffleCardsFunctionOne={shuffleCardsFunctionOne}
           shuffleCardsFunctionTwo={shuffleCardsFunctionTwo}
           shuffleCardsFunctionThree={shuffleCardsFunctionThree}

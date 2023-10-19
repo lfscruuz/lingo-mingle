@@ -1,19 +1,20 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import logo from '/images/cards.png'
 
-export default function Main(){
+export default function Main() {
+    const navigate = useNavigate();
 
-    
-
-    
+    function navigateOne() {
+        navigate("/phase-one");
+        shuffleCardsFunctionOne();
+    }
     return (
         <>
-            <>
-                inicie um novo jogo
-            </>
+            <img className='logo' src={logo} alt="cards-logo" />
             <div className="buttons-container">
-                <button>NEW GAME</button>
-            </div>  
+                <button onClick={navigateOne}>NOVO JOGO</button>
+            </div>
         </>
-    ) 
+    )
 }
 

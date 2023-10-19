@@ -6,6 +6,10 @@ function Header({ shuffleCardsFunctionOne, shuffleCardsFunctionTwo, shuffleCards
 
   const navigate = useNavigate();
 
+  function navigateMain(){
+    navigate("/");
+  }
+
   function navigateOne() {
     navigate("/phase-one");
     shuffleCardsFunctionOne();
@@ -22,7 +26,10 @@ function Header({ shuffleCardsFunctionOne, shuffleCardsFunctionTwo, shuffleCards
   }
 
   return (
-    <>
+    <div className='header'>
+      <button onClick={navigateMain}>
+        Home
+      </button>
       <button onClick={navigateOne}>
         Fase 1
       </button>
@@ -34,7 +41,7 @@ function Header({ shuffleCardsFunctionOne, shuffleCardsFunctionTwo, shuffleCards
       <button onClick={navigateThree}>
         Fase 3
       </button>
-    </>
+    </div>
   )
 }
 

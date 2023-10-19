@@ -4,7 +4,7 @@ $accent-color: #fef0b9;
 $card-width: 10vw;
 $card-height: 10vw;
 
-*{
+* {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
@@ -12,7 +12,7 @@ $card-height: 10vw;
     background-color: $background-color;
 }
 
-body{
+body {
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -21,11 +21,35 @@ body{
     padding: 0 40vw;
 }
 
-button{
+.header {
+    position: fixed;
+    top: 2vh;
+    left: 0;
+
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header button {
+    width: 10vw;
+    height: 5vh;
+}
+
+.header button:active {
+    background-color: black;
+    color: $primary-color;
+}
+
+.logo {
+    width: 40vw;
+}
+
+button {
     background-color: $primary-color;
     width: 15vw;
     height: 10vh;
-    border: solid 3px $accent-color;
+    border: solid 3px black;
     border-radius: 20px;
     margin: 0 5vw;
     cursor: pointer;
@@ -35,29 +59,35 @@ button{
     font-weight: 700;
     // -webkit-text-stroke-width: 2px;
     // -webkit-text-stroke-color: black;
+    transition: all ease-in-out 0.3s;
 }
 
-.buttons-container{
+button:hover {
+    background-color: black;
+    color: $primary-color;
+}
+
+.buttons-container {
     margin-top: 3vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.cards-grid{
+.cards-grid {
     height: 75vh;
     width: 80vw;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    
+
     // display: grid;
     // grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     // gap: 1vw;
 }
 
-.card{
+.card {
     width: $card-width;
     height: $card-height;
     margin: 1vw;
@@ -69,11 +99,11 @@ button{
     position: relative;
 }
 
-.card p{
+.card p {
     font-size: 24px;
 }
 
-.card .back{
+.card .back {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -85,12 +115,12 @@ button{
     transition-delay: 0.2s;
 }
 
-.flipped .back{
+.flipped .back {
     transform: rotateY(90deg);
     transition-delay: 0s;
 }
 
-.card .front{
+.card .front {
     position: absolute;
     transform: rotateY(90deg);
     transition: all ease-in 0.2s;
@@ -98,7 +128,7 @@ button{
     height: $card-height;
 }
 
-.flipped .front{
+.flipped .front {
     transform: rotateY(0deg);
     transition-delay: 0.2s;
 }
