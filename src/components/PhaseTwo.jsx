@@ -6,11 +6,11 @@ export default function PhaseTwo({ cards, setCards, shuffleCardsFunctionTwo, cho
 
     const navigate = useNavigate();
 
-    function navigateToPhase3(){
+    function navigateToPhase3() {
         navigate("/phase-three");
     }
 
-    function closePopup(){
+    function closePopup() {
         setPopup(false);
     }
 
@@ -74,9 +74,9 @@ export default function PhaseTwo({ cards, setCards, shuffleCardsFunctionTwo, cho
                 }
             </div>
             <div className="buttons-container">
+                <h1 className='turns'>JOGADAS: {turns}</h1>
                 <button onClick={shuffleCardsFunctionTwo}>NOVO JOGO</button>
             </div>
-            <h1>JOGADAS: {turns}</h1>
             {popup ? <div className='popup'>
                 <p onClick={closePopup}>X</p>
                 <h1>PARABÉNS! VOCÊ GANHOU!!</h1>

@@ -1,8 +1,8 @@
 $primary-color: #feb159;
 $background-color: #403b59;
 $accent-color: #fef0b9;
-$card-width: 10vw;
-$card-height: 10vw;
+$card-width: 9vw;
+$card-height: 9vw;
 
 * {
     font-family: 'Roboto', sans-serif;
@@ -16,7 +16,7 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     padding: 0 40vw;
 }
@@ -68,11 +68,17 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+
+.buttons-container .turns{
+    position: absolute;
+    left: 5%;
 }
 
 .cards-grid {
-    height: 75vh;
-    width: 80vw;
+    height: 65vh;
+    width: 90vw;
     display: flex;
     flex-wrap: wrap;
     align-items: center;

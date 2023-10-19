@@ -5,11 +5,11 @@ import { useNavigate } from 'react-router-dom';
 export default function PhaseOne({ cards, setCards, shuffleCardsFunctionOne, choiceOne, setChoiceOne, choiceTwo, setChoiceTwo, disabled, setDisabled, resetTurn, setTurns, turns, setPopup, popup }) {
     const navigate = useNavigate();
 
-    function navigateToPhase2(){
+    function navigateToPhase2() {
         navigate("/phase-two");
     }
 
-    function closePopup(){
+    function closePopup() {
         setPopup(false);
     }
     function handleChoice(card) {
@@ -70,9 +70,9 @@ export default function PhaseOne({ cards, setCards, shuffleCardsFunctionOne, cho
                 }
             </div>
             <div className="buttons-container">
+                <h1 className='turns'>JOGADAS: {turns}</h1>
                 <button onClick={shuffleCardsFunctionOne}>NOVO JOGO</button>
             </div>
-            <h1>JOGADAS: {turns}</h1>
             {popup ? <div className='popup'>
                 <p onClick={closePopup}>X</p>
                 <h1>PARABÉNS! VOCÊ GANHOU!!</h1>
