@@ -6,6 +6,7 @@ import PhaseOne from './components/PhaseOne';
 import PhaseTwo from './components/PhaseTwo';
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import shuffle from './constants/shuffleFunctions';
+import PhaseThree from './components/PhaseThree';
 
 function App() {
   const [cards, setCards] = useState([]);
@@ -31,6 +32,11 @@ function App() {
     resetTurn();
   }
 
+  function shuffleCardsFunctionThree() {
+    const shuffledCards = shuffle.phaseThree;
+    setCards(shuffledCards);
+    resetTurn();
+  }
 
   return (
     <BrowserRouter>
@@ -38,6 +44,7 @@ function App() {
         <Header 
           shuffleCardsFunctionOne={shuffleCardsFunctionOne}
           shuffleCardsFunctionTwo={shuffleCardsFunctionTwo}
+          shuffleCardsFunctionThree={shuffleCardsFunctionThree}
         />
         <Routes>
           <Route
@@ -81,6 +88,23 @@ function App() {
                 cards={cards}
                 setCards={setCards}
                 shuffleCardsFunctionTwo={shuffleCardsFunctionTwo}
+                choiceOne={choiceOne}
+                setChoiceOne={setChoiceOne}
+                choiceTwo={choiceTwo}
+                setChoiceTwo={setChoiceTwo}
+                disabled={disabled}
+                setDisabled={setDisabled}
+                resetTurn={resetTurn}
+              />
+            }
+          />
+          <Route
+            path='phase-three'
+            element={
+              <PhaseThree
+                cards={cards}
+                setCards={setCards}
+                shuffleCardsFunctionThree={shuffleCardsFunctionThree}
                 choiceOne={choiceOne}
                 setChoiceOne={setChoiceOne}
                 choiceTwo={choiceTwo}

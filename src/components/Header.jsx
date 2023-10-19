@@ -2,7 +2,7 @@ import { useState } from 'react';
 import shuffle from '../constants/shuffleFunctions';
 import { Link, useNavigate } from 'react-router-dom';
 
-function Header({ shuffleCardsFunctionOne, shuffleCardsFunctionTwo }) {
+function Header({ shuffleCardsFunctionOne, shuffleCardsFunctionTwo, shuffleCardsFunctionThree }) {
 
   const navigate = useNavigate();
 
@@ -16,6 +16,11 @@ function Header({ shuffleCardsFunctionOne, shuffleCardsFunctionTwo }) {
     shuffleCardsFunctionTwo();
   }
 
+  function navigateThree(){
+    navigate("/phase-three");
+    shuffleCardsFunctionThree();
+  }
+
   return (
     <>
       <button onClick={navigateOne}>
@@ -26,6 +31,9 @@ function Header({ shuffleCardsFunctionOne, shuffleCardsFunctionTwo }) {
         Fase 2
       </button>
 
+      <button onClick={navigateThree}>
+        Fase 3
+      </button>
     </>
   )
 }
