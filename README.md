@@ -1,8 +1,23 @@
-# React + Vite
+# Bem-vindo(a) ao LingoMingle
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Esse é um jogo da memória simples, feito com o intuito de ajudar idosos a aprender vocabulário em inglês
 
-Currently, two official plugins are available:
+## Como jogar? 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<img src="public/images/linglemingle_test.gif"/>
+
+## 3 fases completas
+
+- **Fase 1:** Animais
+    - <img src="public/images/dog.png" width="100px"/>
+    - <img src="public/images/palavra Dog.png" width="100px"/>
+- **Fase 2:** Comidas
+    - <img src="public/images/cake.png" width="100px"/>
+    - <img src="public/images/palavra Cake.png" width="100px"/>
+- **Fase 3:** Roupas
+    - <img src="public/images/jacket.png" width="100px"/>
+    - <img src="public/images/jackets palavra.png" width="100px"/>
+
+<a href="https://memory-game-lyart-sigma.vercel.app/" target="blank">
+    <h2>Jogue Agora!!</h2>
+</a>
