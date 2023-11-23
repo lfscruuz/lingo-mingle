@@ -1,8 +1,14 @@
+import { useNavigate } from 'react-router-dom';
 import Card from './Card';
 import { useEffect } from 'react';
 
 
-export default function PhaseThree({ cards, setCards, shuffleCardsFunctionThree, choiceOne, setChoiceOne, choiceTwo, setChoiceTwo, disabled, setDisabled, resetTurn, setTurns, turns, setPopup, popup }) {
+export default function PhaseThree({ cards, setCards, shuffleCardsFunctionThree, choiceOne, setChoiceOne, choiceTwo, setChoiceTwo, disabled, setDisabled, resetTurn, setTurns, turns, setPopup, popup, backToHomePage }) {
+    const navigate = useNavigate();
+
+    function backToHomePage(){
+        navigate("/");
+      }
 
     function closePopup() {
         setPopup(false);
@@ -68,6 +74,7 @@ export default function PhaseThree({ cards, setCards, shuffleCardsFunctionThree,
             <div className="buttons-container">
                 <h1 className='turns'>JOGADAS: {turns}</h1>
                 <button onClick={shuffleCardsFunctionThree}>NOVO JOGO</button>
+                <button onClick={backToHomePage}>SAIR</button>
             </div>
             {popup ? <div className='popup'>
                 <p onClick={closePopup}>X</p>

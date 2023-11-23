@@ -26,7 +26,7 @@ function Header({ shuffleCardsFunctionOne, shuffleCardsFunctionTwo, shuffleCards
   return (
     <div className='header'>
       <button onClick={navigateMain}>
-        Home
+        Menu
       </button>
       <button onClick={navigateOne}>
         Fase 1
