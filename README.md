@@ -22,4 +22,4 @@ Esse é um jogo da memória simples, feito com o intuito de ajudar idosos a apre
     <h2>Jogue Agora!!</h2>
 </a>
 
-##[Jogue Agora!!](https://memory-game-lyart-sigma.vercel.app/)
+## [Jogue Agora!!](https://memory-game-lyart-sigma.vercel.app/)
